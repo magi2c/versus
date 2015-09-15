@@ -1,0 +1,10 @@
+---
+- hosts: local
+  sudo: yes
+  roles:
+    - franklinkim.ssmtp
+  vars:
+    ssmtp_root: user@gmail.com
+    ssmtp_mailhub: smtp.gmail.com:587
+    ssmtp_auth_user: user
+    ssmtp_auth_pass: pass

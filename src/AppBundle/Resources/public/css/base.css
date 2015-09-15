@@ -1,0 +1,140 @@
+body {
+    padding-top: 70px;
+    font-family: 'Play', sans-serif;
+}
+
+.slide-image {
+    width: 100%;
+}
+
+.item {
+    border-radius: 4px;
+}
+
+.caption {
+    height: 130px;
+    overflow: hidden;
+}
+
+.caption h4 {
+    color: #338dbc;
+}
+
+a:hover .caption h4 {
+    text-decoration: underline;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 250px;
+}
+
+.thumbnail a:hover{
+    text-decoration: none !important;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+
+.thumbnail .links {
+    padding: 9px;
+    color: #333;
+    height: 30px;
+}
+.thumbnail .links a {
+    color: #338dbc !important;
+}
+
+.thumbnail .links a:hover{
+    text-decoration: underline !important;
+}
+
+.thumb-image {
+    position: relative;
+}
+
+.thumb-image .price {
+    background-color: rgba(60, 60, 60, 0.64);
+    bottom: 0;
+    color: #fff;
+    font-size: 20px;
+    left: 0;
+    padding: 3px 10px;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.thumb-image .share {
+    background-color: rgba(60, 60, 60, 0.64);
+    top: 0;
+    color: #fff;
+    font-size: 20px;
+    right: 0;
+    padding: 3px 10px;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+.onversus-header {
+    background-color: #ffffff !important;
+    font-weight: 700;
+}
+
+.onversus-header .navbar-header a {
+    color: #338dbc !important;
+    font-size: 32px;
+}
+.onversus-header .navbar-header a:hover,
+.onversus-header .navbar-header a:focus {
+    color: #66afd5 !important;
+}
+.onversus-header .navbar-header span {
+    color: #000000 !important;
+    font-size: 28px;
+}
+.onversus-right>li>a {
+    color: #338dbc !important;
+}
+.onversus-right>li>a:hover,
+.onversus-right>li>a:focus {
+    color: #66afd5 !important;
+}
+
+.header-brand a {
+    color: #338dbc;
+    background-color: #ffffff;
+    border-color: #338dbc;
+    margin-bottom: 5px;
+}
+
+.header-brand .badge {
+    background-color: #338dbc;
+}
+
+.jumbotron {
+    background-color: #338dbc;
+    font-weight: 700;
+}
+.bs-docs-featurette {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.product-item h1{
+    color: #338dbc !important;
+}
+
+.list-group-home li {
+    padding: 4px 8px !important;
+}

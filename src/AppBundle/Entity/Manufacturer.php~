@@ -1,0 +1,83 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Manufacturer
+ */
+class Manufacturer
+{
+    /**
+     * @var string
+     */
+    private $name;
+
+    /**
+     * @var string
+     */
+    private $brandName;
+
+    /**
+     * @var integer
+     */
+    private $id;
+
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Manufacturer
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set brandName
+     *
+     * @param string $brandName
+     * @return Manufacturer
+     */
+    public function setBrandName($brandName)
+    {
+        $this->brandName = $brandName;
+
+        return $this;
+    }
+
+    /**
+     * Get brandName
+     *
+     * @return string 
+     */
+    public function getBrandName()
+    {
+        return $this->brandName;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}

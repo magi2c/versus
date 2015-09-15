@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Brand"
+          repository-class="AppBundle\Repository\BrandRepository"
+          table="brand">
+    <unique-constraints>
+      <unique-constraint columns="slug" name="unique_idx"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="name" length="65" nullable="false"/>
+    <field name="slug" type="string" column="slug" length="65" nullable="false"/>
+  </entity>
+</doctrine-mapping>

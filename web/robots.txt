@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /bike/comprar
+Disallow: /padel/comprar
+Sitemap: http://www.onversus.com/sitemap.xml

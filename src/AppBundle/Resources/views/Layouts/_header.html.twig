@@ -1,0 +1,42 @@
+<nav class="navbar navbar-inverse navbar-fixed-top onversus-header" role="navigation">
+    <div class="ribbon right green">
+        <a href="#">Beta</a>
+    </div>
+
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ route_search() }}">
+                <span>ON</span>
+                [ VS ]
+                {% if verticalName == constant('AppBundle\\Service\\VerticalService::PADEL')  %}
+                    <span>PADEL</span>
+                {% else %}
+                    <span>BIKE</span>
+                {% endif %}
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right onversus-right">
+                {% if verticalName == constant('AppBundle\\Service\\VerticalService::PADEL')  %}
+                    <li>
+                        <a href="{{ route_search(null, null, null, constant('AppBundle\\Service\\VerticalService::BIKE')) }}">BIKE</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="#">{{ route_search(null, null, null, constant('AppBundle\\Service\\VerticalService::PADEL')) }}</a>
+                    </li>
+                {% endif %}
+                <li>
+                    <a href="#">QUIÉNES SOMOS</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

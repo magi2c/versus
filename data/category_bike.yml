@@ -1,0 +1,75 @@
+Bicicletas:
+    MTB:
+      Rigidas:
+        _pattern: (rigidas)
+        _children:
+          26: (26)
+          27.5: (27.5|27.5)
+          29: (29)
+      Dobles:
+        _pattern: (dobles)
+        _children:
+          26: (26)
+          27.6: (27.5|27.5)
+          29: (29)
+    Carretera:
+    Eléctricas:
+    Bmx:
+    Urbanas:
+    Plegables: (plegable)
+    Infantiles:
+Ropa:
+  Cascos:
+  Maillots:
+  Chaquetas:
+  Gafas:
+  Calcetines:
+  Calzado:
+    MTB:
+    Carretera:
+    Casual:
+  Pantalones:
+  Guantes:
+  Protección:
+Componentes:
+  Cuadros:
+  Horquillas:
+  Amortiguadores:
+  Bielas:
+  Cables:
+  Cadenas:
+  Casettes:
+  Cintas:
+  Desviadores:
+  Pedales:
+  Pedalier:
+  Frenos:
+  Grupos:
+  Direccion:
+  Manillares:
+  Sillines:
+  Tijas:
+  Bolsas:
+  Librería:
+  Nutrición:
+  Rodillos:
+Ruedas:
+  Bujes:
+  Camaras:
+  Cubiertas:
+  Llantas:
+  Bujes:
+Accesorios:
+  Bidones:
+  Bombas:
+  Candados:
+  Cestas:
+  Cuentakilómetros:
+  GPS:
+  Pulsometros:
+Taller:
+  Herramientas:
+  Libros:
+  Limpieza:
+  Lubricantes:
+  Tornillería:

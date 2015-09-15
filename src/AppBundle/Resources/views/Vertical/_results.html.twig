@@ -1,0 +1,52 @@
+<div class="col-md-9">
+    <div class="row">
+        <div class="col-sm-7 col-lg-7 col-md-7">
+            <p>SOCIAL!!!!! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        </div>
+        <div class="col-sm-5 col-lg-5 col-md-5">
+            {% include 'AppBundle:Vertical:_buttons-social.html.twig' %}
+        </div>
+    </div>
+
+    <div class="row">
+        {% for product in currentPageResults %}
+            <div class="col-sm-4 col-lg-4 col-md-4">
+                <div class="thumbnail">
+                    <a href="{{ route_product(product.category ? product.category.slug : 'cat', product.brand.slug, product.id) }}">
+                        <div class="thumb-image">
+                            <img src="{{ product.imageSmall }}" alt="{{ product.title }}" title="{{ product.title }}">
+                        <span class="price">
+                            {{ product.salePrice }}
+                            <sup>€</sup>
+                        </span>
+                        <span class="share">
+                            <span aria-hidden="true" class="glyphicon glyphicon-share-alt"></span>
+                        </span>
+                        </div>
+
+                        <div class="caption">
+                            <h4>{{ product.title }}</h4>
+                            <p>{{ product.summary }}</p>
+                        </div>
+                    </a>
+                    <div class="links">
+                        <a class="pull-left" rel="nofollow" target="_blank" href="{{ route_deep_link('product', product.id) }}">
+                            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                            Comprar
+                        </a>
+                        <a class="pull-right" href="{{ route_product(product.category ? product.category.slug : 'cat', product.brand.slug, product.id) }}">
+                            Comparar
+                            <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="pagerfanta">
+        {{ pagerfanta(productPager, 'twitter_bootstrap3') }}
+    </div>
+</div>
+
+

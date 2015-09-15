@@ -1,0 +1,22 @@
+{% extends 'AppBundle:Layouts:layout-vertical.html.twig' %}
+
+{% block itemTagHtml %}itemscope itemtype="http://schema.org/CollectionPage"{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            {% include 'AppBundle:Vertical:_filters.html.twig' %}
+
+            {% include 'AppBundle:Vertical:_results.html.twig' %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascriptsPage %}
+<script>
+    $(function(){
+        ovApp.initSearch();
+    });
+</script>
+{% endblock %}
+

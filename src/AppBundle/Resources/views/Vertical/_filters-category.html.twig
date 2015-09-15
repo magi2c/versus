@@ -1,0 +1,14 @@
+{% if categoryR.children is not empty %}
+    <ul>
+        {% for children in categoryR.children %}
+        <li>
+            <a class="{% if currentCategory is not empty and children.slug == currentCategory.slug %}active{% endif %}"
+               href="{{ route_search(children.slug, currentBrandSlugs, currentQuery) }}">
+                {{ children.name }}
+            </a>
+
+            {% include 'AppBundle:Vertical:_filters-category.html.twig' with {'categoryR': children} %}
+        </li>
+        {% endfor %}
+    </ul>
+{% endif %}

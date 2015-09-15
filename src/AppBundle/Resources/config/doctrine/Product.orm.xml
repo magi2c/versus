@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Product"
+          repository-class="AppBundle\Repository\ProductRepository"
+          table="product">
+    <unique-constraints>
+         <unique-constraint columns="external_ref" name="unique_idx"/>
+    </unique-constraints>
+
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+
+    <field name="title" type="string" column="title" length="253" nullable="false"/>
+    <field name="description" type="text" column="description" nullable="false"/>
+    <field name="summary" type="text" column="summary" nullable="false"/>
+    <field name="tags" type="string" column="tags" length="255" nullable="false"/>
+    <field name="url" type="text" column="url" nullable="false"/>
+    <field name="originalPrice" type="float" column="original_price" precision="10" scale="0" nullable="false"/>
+    <field name="salePrice" type="string" column="sale_price" length="10" nullable="false"/>
+    <field name="status" type="boolean" column="status" nullable="true"/>
+    <field name="locked" type="boolean" column="locked" nullable="false"/>
+    <field name="sort" type="integer" column="sort" nullable="false">
+      <options>
+          <option name="default">0</option>
+      </options>
+    </field>
+
+    <field name="dateAdded" type="date" column="date_added" nullable="false"/>
+    <field name="dateModified" type="date" column="date_modified" nullable="false"/>
+
+    <field name="imageSmall" type="string" column="image_small" length="253" nullable="false"/>
+    <field name="imageBig" type="string" column="image_big" length="253" nullable="false"/>
+
+    <field name="externalRef" type="string" column="external_ref" length="253" nullable="false"/>
+    <field name="ean" type="string" column="ean" length="253" nullable="true"/>
+    <field name="upc" type="string" column="upc" length="253" nullable="true"/>
+    <field name="isbn" type="string" column="isbn" length="253" nullable="true"/>
+
+    <many-to-one field="shop" target-entity="Shop">
+      <join-column name="shop_id" referenced-column-name="id"/>
+    </many-to-one>
+
+    <many-to-one field="brand" target-entity="Brand">
+      <cascade>
+          <cascade-persist/>
+      </cascade>
+      <join-column name="brand_id" referenced-column-name="id"/>
+    </many-to-one>
+
+    <many-to-one field="category" target-entity="Category" >
+      <cascade>
+          <cascade-persist/>
+      </cascade>
+      <join-column name="category_id" referenced-column-name="id"/>
+    </many-to-one>
+
+    <many-to-one field="parent" target-entity="Product" inversed-by="children">
+      <join-column name="parent_id" referenced-column-name="id" nullable="true"/>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

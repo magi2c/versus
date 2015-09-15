@@ -1,0 +1,10 @@
+---
+- hosts: all
+  sudo: yes
+  roles:
+    - franklinkim.ssmtp
+  vars:
+    ssmtp_root: admin@example.com
+    ssmtp_mailhub: smtp.mandrillapp.com:587
+    ssmtp_auth_user: the_mandrill_account_username
+    ssmtp_auth_pass: the_mandrill_api_key

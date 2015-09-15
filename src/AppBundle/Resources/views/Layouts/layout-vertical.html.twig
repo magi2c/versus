@@ -1,0 +1,80 @@
+{% extends 'AppBundle:Layouts:base.html.twig' %}
+
+{% block icons %}
+    <link rel="icon" href="{{ asset('favicon.ico') }}" />
+{% endblock %}
+
+{% block title %}{{ seo_info_get('title') }}{% endblock %}
+{% block metaDescription %}{{ seo_info_get('description') }}{% endblock %}
+{% block metaKeywords %}{{ seo_info_get('keywords') }}{% endblock %}
+{% block metas %}
+    <link rel="canonical" href="{{ seo_info_get('canonical') }}">
+    <meta itemprop="inLanguage" content="es"/>
+
+    <meta property="og:title" content="{{ seo_info_get('og_title') }}"/>
+    <meta property="og:url" content="{{ seo_info_get('og_url') }}">
+    <meta property="og:description" content="{{ seo_info_get('og_description') }}"/>
+    <meta property="og:type" content="{{ seo_info_get('og_type') }}"/>
+    <meta property="og:image" content="{{ seo_info_get('og_image') }}"/>
+
+    <meta name="twitter:card" content="{{ seo_info_get('tw_card') }}">
+    <meta name="twitter:site" content="{{ seo_info_get('tw_site') }}">
+    <meta name="twitter:creator" content="{{ seo_info_get('tw_creator') }}">
+    <meta name="twitter:image:src" content="{{ seo_info_get('tw_image') }}"/>
+
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="googlebot" content="noindex,nofollow">
+{% endblock %}
+
+
+{% block stylesheets %}
+    <link href='http://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css'>
+    {% stylesheets
+        'bundles/app/vendor-css/bootstrap.min.css'
+        'bundles/app/vendor-css/jquery.treemenu.css'
+        'bundles/app/vendor-css/ribbons.css'
+        'bundles/app/vendor-css/rrssb.css'
+        'bundles/app/vendor-css/consent.css'
+        'bundles/app/css/base.css'
+        filter='cssrewrite, ?yui_css'  %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+
+{% endblock %}
+
+{% block javascriptsHead %}
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+{% endblock %}
+
+{% block javascripts %}
+
+    {% javascripts
+        'bundles/app/vendor-js/jquery.js'
+        'bundles/app/vendor-js/jquery.treemenu.js'
+        'bundles/app/vendor-js/bootstrap.min.js'
+        'bundles/app/vendor-js/rrssb.min.js'
+        'bundles/app/vendor-js/consent.js'
+        'bundles/app/js/app.js'
+        filter='cssrewrite, ?yui_css'  %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+{% endblock %}
+
+{% block analytics %}
+    {% include 'AppBundle:Layouts:_analytics.html.twig' %}
+{% endblock %}
+
+{% block body %}
+    {% block bodyHeader %}
+        {% include 'AppBundle:Layouts:_header.html.twig' %}
+    {% endblock %}
+
+    {% block content %}{% endblock %}
+
+    {% include 'AppBundle:Layouts:_footer.html.twig' %}
+{% endblock %}

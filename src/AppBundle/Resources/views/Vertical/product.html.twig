@@ -1,0 +1,86 @@
+{% extends 'AppBundle:Layouts:layout-vertical.html.twig' %}
+
+{% block itemTagHtml %}itemscope itemtype="http://schema.org/ItemPage"{% endblock %}
+
+{% block content %}
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <ol class="breadcrumb">
+                    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                        <a href="{{ route_search() }}">{{ verticalName }}</a></li>
+                    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                        <a href="{{ route_search(product.category ? product.category.slug : '', product.brand.slug) }}">{{ product.category ? product.category.name : 'Category' }}</a></li>
+                    <li class="active">{{ product.title }}</li>
+                </ol>
+            </div>
+        </div>
+
+
+        <div class="row product-item" itemscope itemtype="http://schema.org/Product">
+            <div class="col-md-6">
+                <img itemprop="image" src="{{ product.imageBig }}" class="img-thumbnail" alt="{{ product.title }}" title="{{ product.title }}">
+            </div>
+            <div class="col-md-6">
+                <h1 itemprop="name">{{ product.title }}</h1>
+
+                <h4 class="pull-right" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                    Mejor precio:
+                    <span itemprop="price" content="{{ product.salePrice }}" class="price">{{ product.salePrice }}<sup itemprop="priceCurrency" content="EUR">€</sup></span>
+                </h4>
+
+                <h4 class="pull-left">
+                    <span itemprop="brand">{{ product.brand.name }}</span>
+                    <meta itemprop="manufacturer" content="{{ product.brand.name }}" />
+                </h4>
+
+
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Precio original</th>
+                        <th>Precio actual</th>
+                        <th>Ultima modificación</th>
+                        <th>Tienda</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {% if product.children is not empty %}
+                        <tr>
+                            <td>Mark</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td>{{ product.originalPrice }} </td>
+                            <td>{{ product.salePrice }} </td>
+                            <td>{{ product.dateModified|date('Y-m-d') }}</td>
+                            <td>{{ product.shop.name }}</td>
+                        </tr>
+                    {% endif %}
+
+                    </tbody>
+                </table>
+
+
+                <div class="row">
+                    <div class="col-sm-12 col-lg-12 col-md-12">
+                        <p>SOCIAL!!!!! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                        {% include 'AppBundle:Vertical:_buttons-social.html.twig' %}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6" itemprop="description">{{ product.description }}</div>
+        </div>
+
+    </div>
+{% endblock %}

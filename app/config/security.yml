@@ -1,0 +1,26 @@
+security:
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+
+    firewalls:
+        backend:
+            pattern:        ^/*
+            anonymous: ~
+            http_basic:
+                realm: "Secured Area"
+                provider: administrators
+
+    access_control:
+        - { path: ^/nimda*, roles: ROLE_ADMIN }
+
+    providers:
+        administrators:
+            memory:
+                users:
+                     admin:
+                        password: $2a$12$JQ60t7lQ58GCRYJMVSsnB.z1.kgRnp8igP/mxxT5eM5AY2Fuzd.zu
+                        roles: 'ROLE_ADMIN'

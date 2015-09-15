@@ -1,0 +1,11 @@
+---
+
+- name: Configuring ssmtp
+  template:
+    src: "{{ item }}.j2"
+    dest: "/{{ item }}"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  with_items:
+    - "etc/ssmtp/ssmtp.conf"

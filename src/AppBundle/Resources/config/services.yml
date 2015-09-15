@@ -1,0 +1,52 @@
+services:
+    ov.search_manager.em_bike:
+        class: AppBundle\Component\SearchManager
+        arguments: [@doctrine.orm.bike_entity_manager]
+    ov.search_manager.em_padel:
+        class: AppBundle\Component\SearchManager
+        arguments: [@doctrine.orm.padel_entity_manager]
+
+    ov.vertical:
+        class: AppBundle\Service\VerticalService
+        arguments: [@request_stack]
+    ov.route:
+        class: AppBundle\Service\RouteService
+        arguments: [@router, @ov.vertical]
+        tags :
+            - { name: twig.extension }
+    ov.seo_info:
+        class: AppBundle\Service\SeoInfoService
+        arguments: [@request_stack, @ov.vertical]
+        tags :
+            - { name: twig.extension }
+
+
+
+
+
+
+    ov.feed.bike_inn:
+        class: AppBundle\Component\Feed\Importer\Bike\BikeInnImporter
+        arguments: [@doctrine.orm.bike_entity_manager, @cocur_slugify, %kernel.root_dir%]
+
+    ov.feed.alltricks:
+        class: AppBundle\Component\Feed\Importer\Bike\AlltricksImporter
+        arguments: [@doctrine.orm.bike_entity_manager, @cocur_slugify, %kernel.root_dir%]
+
+    ov.feed.probikeshop:
+        class: AppBundle\Component\Feed\Importer\Bike\ProbikeShopImporter
+        arguments: [@doctrine.orm.bike_entity_manager, @cocur_slugify, %kernel.root_dir%]
+
+    ov.feed.retto:
+        class: AppBundle\Component\Feed\Importer\Bike\RettoImporter
+        arguments: [@doctrine.orm.bike_entity_manager, @cocur_slugify, %kernel.root_dir%]
+
+    ov.feed.chain_reaction_cycles:
+        class: AppBundle\Component\Feed\Importer\Bike\ChainReactionCyclesImporter
+        arguments: [@doctrine.orm.bike_entity_manager, @cocur_slugify, %kernel.root_dir%]
+
+
+    ov.feed.smash_inn:
+        class: AppBundle\Component\Feed\Importer\Padel\SmashInnImporter
+        arguments: [@doctrine.orm.padel_entity_manager, @cocur_slugify, %kernel.root_dir%]
+

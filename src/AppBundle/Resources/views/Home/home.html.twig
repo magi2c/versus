@@ -1,0 +1,99 @@
+{% extends 'AppBundle:Layouts:layout-vertical.html.twig' %}
+
+{% block bodyHeader %}
+    {% include 'AppBundle:Layouts:_header-home.html.twig' %}
+{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        <div class="container">
+            <h1>On Versus</h1>
+            <p>Comparador social de precios! Encuentra los mejores productos con descuentos</p>
+        </div>
+    </div>
+
+    <div class="bs-docs-featurette">
+        <div class="container">
+            <h2 class="bs-docs-featurette-title">On Versus Bike</h2>
+            <p class="lead">Comparador socail del mundo de las bicicletas.</p>
+
+            <hr class="half-rule">
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3>Las mejores marcas</h3>
+                    <p>Buscamos y ordenamos los productos por marcas, ¿Quieres que añadimos alguna marcar?</p>
+                    <ul class="list-group list-group-home">
+                        {% for brand in links.bike.brandList %}
+                            <li class="list-group-item"><a href="{{ route_search(null, brand.slug, null, 'bike') }}">{{ brand.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <h3>Agrupados por categorías</h3>
+                    <p>¿Ves algun producto fuera de su categoria? Compartelo y lo corregiremos</p>
+                    <ul class="list-group list-group-home">
+                        {% for category in links.bike.categoryList %}
+                            <li class="list-group-item"><a href="{{ route_search(category.slug, null, null, 'bike') }}">{{ category.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <h3>Todas las tiendas</h3>
+                    <p>¿Tienes una tienda online de bicicletas? Contacta con nosotros</p>
+                    <ul class="list-group list-group-home">
+                        {% for shop in links.bike.shopList %}
+                            <li class="list-group-item"><a rel="nofollow" target="_blank" href="{{ route_deep_link('shop', shop.id) }}">{{ shop.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="bs-docs-featurette">
+        <div class="container">
+            <h2 class="bs-docs-featurette-title">On Versus Padel</h2>
+            <p class="lead">Comparador socail para los amantes del padel.</p>
+
+            <hr class="half-rule">
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3>Las mejores marcas</h3>
+                    <p>Buscamos y ordenamos los productos por marcas, ¿Quieres que añadimos alguna marcar?</p>
+                    <ul class="list-group list-group-home">
+                        {% for brand in links.bike.brandList %}
+                            <li class="list-group-item"><a href="{{ route_search(null, brand.slug, null, 'bike') }}">{{ brand.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <h3>Agrupados por categorías</h3>
+                    <p>¿Ves algun producto fuera de su categoria? Compartelo y lo corregiremos</p>
+                    <ul class="list-group list-group-home">
+                        {% for category in links.bike.categoryList %}
+                            <li class="list-group-item"><a href="{{ route_search(category.slug, null, null, 'bike') }}">{{ category.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <h3>Todas las tiendas</h3>
+                    <p>¿Tienes una tienda online de bicicletas? Contacta con nosotros</p>
+                    <ul class="list-group list-group-home">
+                        {% for shop in links.bike.shopList %}
+                            <li class="list-group-item"><a rel="nofollow" target="_blank" href="{{ route_deep_link('shop', shop.id) }}">{{ shop.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
+

@@ -1,0 +1,27 @@
+---
+# For more information about default variables see:
+# http://www.ansibleworks.com/docs/playbooks_variables.html#id26
+#
+
+# package name (version)
+ssmtp_package: ssmtp
+# The person who gets all mail for userids < 1000
+# Make this empty to disable rewriting.
+ssmtp_root: postmaster
+# The place where the mail goes. The actual machine name is required no
+# MX records are consulted. Commonly mailhosts are named mail.domain.com
+ssmtp_mailhub: mail
+# Where will the mail seem to come from?
+ssmtp_rewrite_domain:
+# The full hostname (defaults to ansible_fqdn)
+hostname:
+# Are users allowed to set their own From: address?
+# YES - Allow the user to specify their own From: address
+# NO - Use the system generated From: address
+ssmtp_from_line_override: 'YES'
+# use TLS
+ssmtp_use_starttls: 'YES'
+# user name
+ssmtp_auth_user:
+# password
+ssmtp_auth_pass:

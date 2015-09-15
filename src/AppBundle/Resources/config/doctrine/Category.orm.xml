@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Category"
+          repository-class="AppBundle\Repository\CategoryRepository"
+          table="category">
+    <unique-constraints>
+        <unique-constraint columns="slug" name="unique_idx"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="slug" type="string" column="slug" length="65" nullable="false"/>
+    <field name="name" type="string" column="name" length="65" nullable="false"/>
+    <field name="status" type="boolean" column="status" nullable="false"/>
+    <field name="pattern" type="string" column="pattern" nullable="true"/>
+    <field name="order" type="string" column="`order`" nullable="true"/>
+
+    <one-to-many field="children" target-entity="Category" mapped-by="parent" >
+    </one-to-many>
+    <many-to-one field="parent" target-entity="Category" inversed-by="children">
+      <join-column name="parent_id" referenced-column-name="id" nullable="true"/>
+    </many-to-one>
+
+
+  </entity>
+</doctrine-mapping>

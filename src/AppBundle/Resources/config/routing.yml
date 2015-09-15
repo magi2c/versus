@@ -1,0 +1,39 @@
+deep_link:
+  path:   /{vertical}/deep-link/{entity}/{key}
+  defaults: { _controller: AppBundle:Vertical:deepLink }
+  requirements:
+    vertical: bike|padel
+    entity: shop|product
+    key: "id-[\S]+"
+
+product:
+  path:   /{vertical}/{category}/{brand}/{key}
+  defaults: { _controller: AppBundle:Vertical:product }
+  requirements:
+    vertical: bike|padel
+    category: "[\w-,]+"
+    brand: "[\w-,]+"
+    key: "id-[\S]+"
+
+search:
+  path:   /{vertical}/{categoryOrTheNext}/{brandOrTheNext}/{query}
+  defaults: { _controller: AppBundle:Vertical:search, categoryOrTheNext: null, brandOrTheNext: null, query: null }
+  requirements:
+    categoryOrBrand: "[\w-,]+"
+    brand: "[\w-,]+"
+    query: "[\w-,]+"
+
+cookies:
+    path: /cookies
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    Home/cookies.html.twig
+        maxAge:       86400
+        sharedAge:    86400
+home:
+    path:      /
+    defaults:  { _controller: AppBundle:Home:home }
+    options: { sitemap: true }
+
+
+

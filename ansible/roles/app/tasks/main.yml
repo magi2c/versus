@@ -1,0 +1,14 @@
+---
+- name: create /var/www/ directory
+  file: dest=/var/www/ state=directory owner=www-data group=www-data mode=0700
+
+
+- name: Clone git repository
+  git:
+    repo: "git@bitbucket.org:magi2c/versus.git"
+    dest: "/var/www/ov"
+    version: "master"
+    force: yes
+  ignore_errors: true
+  sudo: yes
+  sudo_user: www-data

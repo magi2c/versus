@@ -1,0 +1,235 @@
+{% extends 'AppBundle:Layouts:base.html.twig' %}
+
+{% block icons %}
+    <link rel="icon" href="{{ asset('favicon.ico') }}" />
+{% endblock %}
+
+{% block title %}{% block subtitle %}{% endblock %} - Bike On Versus{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/app/theme/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/app/theme/css/agency.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('bundles/app/theme/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+{% endblock %}
+
+{% block javascriptsHead %}
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/app/theme/js/jquery.js') }}"></script>
+    <script src="{{ asset('bundles/app/theme/js/bootstrap.min.js') }}"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="{{ asset('bundles/app/theme/js/classie.js') }}"></script>
+    <script src="{{ asset('bundles/app/theme/js/cbpAnimatedHeader.js') }}"></script>
+    <script src="{{ asset('bundles/app/theme/js/jqBootstrapValidation.js') }}"></script>
+    <script src="{{ asset('bundles/app/theme/js/contact_me.js') }}"></script>
+    <script src="{{ asset('bundles/app/theme/js/agency.js') }}"></script>
+{% endblock %}
+
+
+{% block body %}
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">ON [VS]</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#bike">Bike</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#padel">Padel</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Quiénes Somos</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Comparador social de precios!</div>
+                <div class="intro-heading">Encuentra los mejores precios</div>
+            </div>
+        </div>
+    </header>
+
+    <section id="bike" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">BikeOnVersus</h2>
+                    <h3 class="section-subheading text-muted">Comparador socail del mundo de las bicicletas.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <h4>Las mejores marcas con descuentos</h4>
+                    <p>Buscamos y ordenamos los productos por marcas, ¿Quieres que añadimos alguna marcar?</p>
+                    <ul class="list-group">
+                        <li class="list-group-item">Endura</li>
+                        <li class="list-group-item">Mavic</li>
+                        <li class="list-group-item">Scott</li>
+                        <li class="list-group-item">Cannondale</li>
+                        <li class="list-group-item">Garmin</li>
+                        <li class="list-group-item">Giro</li>
+                        <li class="list-group-item">Todas las marcas</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <h4>Agrupados por categorías</h4>
+                    <p>¿Ves algun producto fuera de su categoria? Compartelo y lo corregiremos</p>
+                    <ul class="list-group">
+                        <li class="list-group-item">Biciletas mtb</li>
+                        <li class="list-group-item">Bicicletas carretera</li>
+                        <li class="list-group-item">Cascos</li>
+                        <li class="list-group-item">Cubiertas</li>
+                        <li class="list-group-item">Horquillas</li>
+                        <li class="list-group-item">Maillots</li>
+                        <li class="list-group-item">Todas las categorías </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <h4>Todas las tiendas</h4>
+                    <p>¿Tienes una tienda online de bicicletas? Contacta con nosotros</p>
+                    <ul class="list-group">
+                        <li class="list-group-item">Bikeinn</li>
+                        <li class="list-group-item">ProbikeShop</li>
+                        <li class="list-group-item">Chain Reaction Cycles</li>
+                        <li class="list-group-item">Cubiertas MTB</li>
+                        <li class="list-group-item">Retto</li>
+                        <li class="list-group-item">Alltricks</li>
+                        <li class="list-group-item">Divaloca Bikes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="padel" class="bg-light-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">PadelOnVersus</h2>
+                <h3 class="section-subheading text-muted">Comparador socail para los amantes del padel.</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <h4>Las mejores marcas con descuentos</h4>
+                <p>Buscamos y ordenamos los productos por marcas, ¿Quieres que añadimos alguna marcar?</p>
+                <ul class="list-group">
+                    <li class="list-group-item">Endura</li>
+                    <li class="list-group-item">Mavic</li>
+                    <li class="list-group-item">Scott</li>
+                    <li class="list-group-item">Cannondale</li>
+                    <li class="list-group-item">Garmin</li>
+                    <li class="list-group-item">Giro</li>
+                    <li class="list-group-item">Todas las marcas</li>
+                </ul>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <h4>Agrupados por categorías</h4>
+                <p>¿Ves algun producto fuera de su categoria? Compartelo y lo corregiremos</p>
+                <ul class="list-group">
+                    <li class="list-group-item">Biciletas mtb</li>
+                    <li class="list-group-item">Bicicletas carretera</li>
+                    <li class="list-group-item">Cascos</li>
+                    <li class="list-group-item">Cubiertas</li>
+                    <li class="list-group-item">Horquillas</li>
+                    <li class="list-group-item">Maillots</li>
+                    <li class="list-group-item">Todas las categorías </li>
+                </ul>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <h4>Todas las tiendas</h4>
+                <p>¿Tienes una tienda online de bicicletas? Contacta con nosotros</p>
+                <ul class="list-group">
+                    <li class="list-group-item">Bikeinn</li>
+                    <li class="list-group-item">ProbikeShop</li>
+                    <li class="list-group-item">Chain Reaction Cycles</li>
+                    <li class="list-group-item">Cubiertas MTB</li>
+                    <li class="list-group-item">Retto</li>
+                    <li class="list-group-item">Alltricks</li>
+                    <li class="list-group-item">Divaloca Bikes</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Section -->
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Quiénes Somos</h2>
+                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; Your Website 2014</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="#">Privacy Policy</a>
+                        </li>
+                        <li><a href="#">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+{% endblock %}

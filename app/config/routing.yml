@@ -1,0 +1,10 @@
+DpnXmlSitemapBundle:
+    resource: "@DpnXmlSitemapBundle/Resources/config/routing.xml"
+
+easy_admin_bundle:
+    resource: "@EasyAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /nimda
+
+app:
+    resource: "@AppBundle/Resources/config/routing.yml"
